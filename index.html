@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Burhani Electricals | Service & Repair</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#0b5ed7;
+      --secondary:#ff9800;
+      --dark:#0a2540;
+      --light:#f4f7fb;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:var(--light);
+      color:#333;
+    }
+
+    /* HEADER */
+    header{
+      position:fixed;
+      top:0;left:0;width:100%;
+      background:rgba(10,37,64,.95);
+      color:#fff;
+      z-index:1000;
+      box-shadow:0 4px 10px rgba(0,0,0,.2);
+    }
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 20px;
+    }
+    .logo{
+      font-size:22px;
+      font-weight:700;
+      color:#fff;
+    }
+    .nav a{
+      color:#fff;
+      margin-left:20px;
+      text-decoration:none;
+      font-weight:500;
+      position:relative;
+    }
+    .nav a::after{
+      content:"";
+      position:absolute;
+      bottom:-5px;left:0;
+      width:0;height:2px;
+      background:var(--secondary);
+      transition:.3s;
+    }
+    .nav a:hover::after{width:100%}
+
+    /* HERO */
+    .hero{
+      height:100vh;
+      background:linear-gradient(rgba(10,37,64,.7),rgba(10,37,64,.7)),url('https://images.unsplash.com/photo-1581579185169-1c5a0b5a5d15');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
+      padding:20px;
+    }
+    .hero h1{
+      font-size:48px;
+      margin-bottom:10px;
+      animation:slideDown 1s ease;
+    }
+    .hero p{
+      font-size:20px;
+      max-width:700px;
+      margin:auto;
+      animation:fadeIn 2s ease;
+    }
+    .btn{
+      display:inline-block;
+      margin-top:25px;
+      padding:14px 28px;
+      background:var(--secondary);
+      color:#000;
+      font-weight:600;
+      border-radius:50px;
+      text-decoration:none;
+      transition:.3s;
+      animation:fadeIn 2.5s ease;
+    }
+    .btn:hover{
+      background:#ffa726;
+      transform:translateY(-3px);
+    }
+
+    /* SECTIONS */
+    section{
+      padding:90px 20px;
+      max-width:1200px;
+      margin:auto;
+    }
+    h2{
+      text-align:center;
+      font-size:36px;
+      color:var(--dark);
+      margin-bottom:50px;
+      position:relative;
+    }
+    h2::after{
+      content:"";
+      width:80px;height:4px;
+      background:var(--secondary);
+      display:block;
+      margin:12px auto 0;
+      border-radius:10px;
+    }
+
+    /* SERVICES */
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+    .card{
+      background:#fff;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,.12);
+      transition:.4s;
+      cursor:pointer;
+    }
+    .card:hover{
+      transform:translateY(-10px) scale(1.02);
+    }
+    .card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+    .card-content{
+      padding:20px;
+    }
+    .card h3{
+      margin-top:0;
+      color:var(--primary);
+    }
+
+    /* MODAL */
+    .modal{
+      display:none;
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,.8);
+      align-items:center;
+      justify-content:center;
+      z-index:2000;
+    }
+    .modal-box{
+      background:#fff;
+      max-width:600px;
+      width:90%;
+      border-radius:20px;
+      padding:30px;
+      position:relative;
+      animation:zoomIn .4s ease;
+    }
+    .close{
+      position:absolute;
+      top:15px;right:20px;
+      font-size:22px;
+      cursor:pointer;
+    }
+
+    /* CONTACT */
+    .contact{
+      background:linear-gradient(135deg,var(--primary),#093b8c);
+      color:#fff;
+      border-radius:25px;
+      padding:40px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.2);
+    }
+    .contact p{margin:8px 0}
+
+    footer{
+      background:#081a2f;
+      color:#fff;
+      text-align:center;
+      padding:20px;
+    }
+
+    /* ANIMATIONS */
+    @keyframes slideDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:none}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes zoomIn{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+
+    @media(max-width:768px){
+      .hero h1{font-size:36px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Burhani Electricals</div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<div id="home" class="hero">
+  <div>
+    <h1>Expert Appliance Repair Services</h1>
+    <p>Fans • Gas Stove • Cooker • Juice Machine • Blender • Coil Winding</p>
+    <a class="btn" href="https://wa.me/918780514062">WhatsApp for Service</a>
+  </div>
+</div>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card" onclick="openModal('Fans','We repair all types of fans including Ceiling, Table, Pedestal, Exhaust & Industrial Fans. Motor repair, coil winding, noise & speed issues.')">
+      <img src="https://images.unsplash.com/photo-1598032895413-9e6bcb07b2f4">
+      <div class="card-content"><h3>Fans</h3></div>
+    </div>
+    <div class="card" onclick="openModal('Juice Machine','Domestic & Commercial juice machine repair, motor issues, blade replacement and wiring faults.')">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950">
+      <div class="card-content"><h3>Juice Machine</h3></div>
+    </div>
+    <div class="card" onclick="openModal('Blender / Mixer','Mixer grinder & hand blender repair including switch issues, jar coupling and motor repair.')">
+      <img src="https://images.unsplash.com/photo-1585238342028-4bbc6a8d6c05">
+      <div class="card-content"><h3>Blender / Mixer</h3></div>
+    </div>
+    <div class="card" onclick="openModal('Pressure Cooker','Valve replacement, gasket change, handle repair and steam leakage fixing.')">
+      <img src="https://images.unsplash.com/photo-1615486364528-8c9c1e5d7e8d">
+      <div class="card-content"><h3>Pressure Cooker</h3></div>
+    </div>
+    <div class="card" onclick="openModal('Gas Stove','Burner cleaning, ignition repair, gas leakage fixing and knob replacement.')">
+      <img src="https://images.unsplash.com/photo-1586201375754-1421e0aa2d19">
+      <div class="card-content"><h3>Gas Stove</h3></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact">
+    <p><strong>Husain Vankanerwala</strong></p>
+    <p>📞 +91 8780514062</p>
+    <p>✉ vankanerwalahusain@gmail.com</p>
+    <p>📍 301, Sabri Manzil, Near Evergreen Bakery, Navsari Bazar Main Road, Surat – 395002</p>
+    <a class="btn" href="tel:+918780514062">Call Now</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Burhani Electricals. All Rights Reserved.</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+<script>
+  function openModal(title,text){
+    document.getElementById('modalTitle').innerText=title;
+    document.getElementById('modalText').innerText=text;
+    document.getElementById('modal').style.display='flex';
+  }
+  function closeModal(){
+    document.getElementById('modal').style.display='none';
+  }
+</script>
+
+</body>
+</html>
